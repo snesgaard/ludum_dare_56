@@ -2,6 +2,9 @@ extends RigidBody3D
 
 @onready var step_sound = $step_sound
 
+func initialize(spawn_position: Vector3):
+	self.position = spawn_position
+
 func _body_entered(other: Node) -> void:
 	step_sound.play()
 	Score.handle_collision(self, other)

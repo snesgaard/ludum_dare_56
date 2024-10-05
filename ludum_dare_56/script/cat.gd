@@ -8,6 +8,9 @@ extends RigidBody3D
 
 var rng = RandomNumberGenerator.new()
 
+func initialize(spawn_position: Vector3):
+	self.position = spawn_position
+
 func _find_nearest_creature() -> Node:
 	var creatures = get_tree().get_nodes_in_group("creature")
 	var closest = null
