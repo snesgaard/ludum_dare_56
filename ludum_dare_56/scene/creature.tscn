@@ -1,25 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbggxmrguq6oh"]
+[gd_scene load_steps=5 format=3 uid="uid://cbggxmrguq6oh"]
 
 [ext_resource type="Script" path="res://script/body.gd" id="1_jtdn1"]
 [ext_resource type="AudioStream" uid="uid://b2nhpr0a8cu2w" path="res://sound/step.wav" id="2_71tmf"]
-[ext_resource type="PackedScene" uid="uid://cxp2pydpw7abu" path="res://blend/mouse.blend" id="3_flyfv"]
+[ext_resource type="PackedScene" uid="uid://x3x5ifcn328e" path="res://blend/mouse.blend" id="3_flyfv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6diom"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_yjpuk"]
 
 [node name="body" type="RigidBody3D" groups=["creature"]]
 script = ExtResource("1_jtdn1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.149935, 0, 0, 0, -6.55389e-09, 0.149935, 0, -0.149935, -6.55389e-09, 0, 0.0372271, -0.0314755)
 shape = SubResource("CapsuleShape3D_6diom")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("CapsuleMesh_yjpuk")
 
 [node name="step_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_71tmf")
 
 [node name="mouse" parent="." instance=ExtResource("3_flyfv")]
-transform = Transform3D(0.6, 0, 0, 0, 0.0366814, 0.598878, 0, -0.598878, 0.0366814, 0, 0.186098, 0.307902)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

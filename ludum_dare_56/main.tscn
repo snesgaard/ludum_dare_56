@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mmxd01r232ti"]
+[gd_scene load_steps=15 format=3 uid="uid://mmxd01r232ti"]
 
 [ext_resource type="PackedScene" uid="uid://cbggxmrguq6oh" path="res://scene/creature.tscn" id="1_h6m4x"]
 [ext_resource type="Script" path="res://script/spot_light_3d.gd" id="2_b50a5"]
@@ -18,39 +18,55 @@ background_mode = 2
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_iqo0r")
 tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 9.08
 glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_3ibol"]
-size = Vector3(20, 0.1, 20)
+size = Vector3(20, 1, 20)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k7fx8"]
-data = PackedVector3Array(-10, 0.05, 10, 10, 0.05, 10, -10, -0.05, 10, 10, 0.05, 10, 10, -0.05, 10, -10, -0.05, 10, 10, 0.05, -10, -10, 0.05, -10, 10, -0.05, -10, -10, 0.05, -10, -10, -0.05, -10, 10, -0.05, -10, 10, 0.05, 10, 10, 0.05, -10, 10, -0.05, 10, 10, 0.05, -10, 10, -0.05, -10, 10, -0.05, 10, -10, 0.05, -10, -10, 0.05, 10, -10, -0.05, -10, -10, 0.05, 10, -10, -0.05, 10, -10, -0.05, -10, 10, 0.05, 10, -10, 0.05, 10, 10, 0.05, -10, -10, 0.05, 10, -10, 0.05, -10, 10, 0.05, -10, -10, -0.05, 10, 10, -0.05, 10, -10, -0.05, -10, 10, -0.05, 10, 10, -0.05, -10, -10, -0.05, -10)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0gmkq"]
+points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.1548, -10.1587, -0.65873, 10.1548, -10.1587, 0.611111, -10.1548, 10.1587, -0.65873, -10.1548, -10.1587, 0.611111, 10.1548, 10.1587, -0.65873, 10.1548, 10.1587, 0.611111, -10.1548)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lysvs"]
+points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.1548, -10.1587, -0.65873, 10.1548, -10.1587, 0.611111, -10.1548, 10.1587, -0.65873, -10.1548, -10.1587, 0.611111, 10.1548, 10.1587, -0.65873, 10.1548, 10.1587, 0.611111, -10.1548)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1kk2l"]
+points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.1548, -10.1587, -0.65873, 10.1548, -10.1587, 0.611111, -10.1548, 10.1587, -0.65873, -10.1548, -10.1587, 0.611111, 10.1548, 10.1587, -0.65873, 10.1548, 10.1587, 0.611111, -10.1548)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_14ji5"]
+points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.1548, -10.1587, -0.65873, 10.1548, -10.1587, 0.611111, -10.1548, 10.1587, -0.65873, -10.1548, -10.1587, 0.611111, 10.1548, 10.1587, -0.65873, 10.1548, 10.1587, 0.611111, -10.1548)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_25pjj"]
+points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.1548, -10.1587, -0.65873, 10.1548, -10.1587, 0.611111, -10.1548, 10.1587, -0.65873, -10.1548, -10.1587, 0.611111, 10.1548, 10.1587, -0.65873, 10.1548, 10.1587, 0.611111, -10.1548)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8p45y"]
+points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.1548, -10.1587, -0.65873, 10.1548, -10.1587, 0.611111, -10.1548, 10.1587, -0.65873, -10.1548, -10.1587, 0.611111, 10.1548, 10.1587, -0.65873, 10.1548, 10.1587, 0.611111, -10.1548)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8gy8e")
 
-[node name="body" parent="." instance=ExtResource("1_h6m4x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20432, 5.53408, 0)
-
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.37195, 0)
+shadow_enabled = true
 spot_range = 13.204
-spot_attenuation = -0.18
+spot_attenuation = 0.92
 spot_angle = 76.63
-spot_angle_attenuation = 0.933035
+spot_angle_attenuation = 0.57435
 script = ExtResource("2_b50a5")
 
 [node name="level-geometry" type="Node3D" parent="."]
 
 [node name="floor" type="StaticBody3D" parent="level-geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="level-geometry/floor"]
 mesh = SubResource("BoxMesh_3ibol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/floor"]
-shape = SubResource("ConcavePolygonShape3D_k7fx8")
+shape = SubResource("ConvexPolygonShape3D_0gmkq")
 
 [node name="floor6" type="StaticBody3D" parent="level-geometry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.007, 0)
@@ -59,7 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.007, 0)
 mesh = SubResource("BoxMesh_3ibol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/floor6"]
-shape = SubResource("ConcavePolygonShape3D_k7fx8")
+shape = SubResource("ConvexPolygonShape3D_lysvs")
 
 [node name="floor2" type="StaticBody3D" parent="level-geometry"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 9.89456, 9.87006, 0)
@@ -68,7 +84,7 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 9.8945
 mesh = SubResource("BoxMesh_3ibol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/floor2"]
-shape = SubResource("ConcavePolygonShape3D_k7fx8")
+shape = SubResource("ConvexPolygonShape3D_1kk2l")
 
 [node name="floor3" type="StaticBody3D" parent="level-geometry"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.319503, 9.87006, -9.74659)
@@ -77,7 +93,7 @@ transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114
 mesh = SubResource("BoxMesh_3ibol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/floor3"]
-shape = SubResource("ConcavePolygonShape3D_k7fx8")
+shape = SubResource("ConvexPolygonShape3D_14ji5")
 
 [node name="floor4" type="StaticBody3D" parent="level-geometry"]
 transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -9.60404, 9.87006, 0.081357)
@@ -86,7 +102,7 @@ transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.821
 mesh = SubResource("BoxMesh_3ibol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/floor4"]
-shape = SubResource("ConcavePolygonShape3D_k7fx8")
+shape = SubResource("ConvexPolygonShape3D_25pjj")
 
 [node name="floor5" type="StaticBody3D" parent="level-geometry"]
 transform = Transform3D(-5.21253e-16, -1.19249e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, 1.19249e-08, 0.406607, 9.87006, 9.73707)
@@ -96,18 +112,24 @@ visible = false
 mesh = SubResource("BoxMesh_3ibol")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/floor5"]
-shape = SubResource("ConcavePolygonShape3D_k7fx8")
-
-[node name="body2" parent="." instance=ExtResource("1_h6m4x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24417, 6.98391, -4.81295)
-
-[node name="body3" parent="." instance=ExtResource("1_h6m4x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00041, 6.23163, 0)
+shape = SubResource("ConvexPolygonShape3D_8p45y")
 
 [node name="Control" parent="." instance=ExtResource("4_xv03d")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999435, 0.0278717, -0.0187806, -2.11758e-22, 0.558802, 0.829301, 0.0336087, -0.828833, 0.558486, -0.570008, 13.6047, 5.87344)
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 12, 5)
+visible = false
+current = true
+size = 17.216
+
+[node name="Mouse1" parent="." instance=ExtResource("1_h6m4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.204, 0, 0)
+
+[node name="Mouse2" parent="." instance=ExtResource("1_h6m4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.244, 0, -4.813)
+
+[node name="Mouse3" parent="." instance=ExtResource("1_h6m4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
 
 [node name="cat" parent="." instance=ExtResource("3_am6ro")]
-transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.529384, 1.72837, 3.34623)
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.0459153, 0, -0.00582051)
