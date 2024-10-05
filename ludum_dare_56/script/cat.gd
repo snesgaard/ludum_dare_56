@@ -10,6 +10,10 @@ var rng = RandomNumberGenerator.new()
 
 func initialize(spawn_position: Vector3):
 	self.position = spawn_position
+	
+func _on_force_change(c: float) -> void:
+	print("Force was changed", c)
+	force += c
 
 func _find_nearest_creature() -> Node:
 	var creatures = get_tree().get_nodes_in_group("creature")
@@ -37,6 +41,7 @@ func _move_forward() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	move_timer.timeout.connect(_move_forward)
+	Powerup.bad_guy_force_change.connect(_on_force_change)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
