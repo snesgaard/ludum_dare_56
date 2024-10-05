@@ -1,9 +1,12 @@
 extends SpotLight3D
 
+func _on_change_light(change: float) -> void:
+	print("changing light energy")
+	self.light_energy -= change
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Powerup.change_light.connect(_on_change_light)
 
 var rng = RandomNumberGenerator.new()
 
