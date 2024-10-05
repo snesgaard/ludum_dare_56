@@ -9,8 +9,9 @@ size = Vector3(6, 3, 0.75)
 points = PackedVector3Array(3, 1.5, 0.375, 3, 1.5, -0.375, -3, 1.5, 0.375, 3, -1.5, 0.375, 3, -1.5, -0.375, -3, 1.5, -0.375, -3, -1.5, 0.375, -3, -1.5, -0.375)
 
 [node name="body" type="RigidBody3D" groups=["badguy"]]
-lock_rotation = true
+gravity_scale = 2.0
 script = ExtResource("1_rqp3q")
+force_step = 500.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_x3mqa")
