@@ -22,7 +22,7 @@ visible = false
 mesh = SubResource("BoxMesh_x3mqa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.32294, 0, 0.747307, 0)
+transform = Transform3D(0.00780153, 0, 3.32284, 0, 1, 0, -0.99997, 0, 0.025924, 0, 0.747307, -2.98119)
 shape = SubResource("ConvexPolygonShape3D_mdk5p")
 
 [node name="Timer" type="Timer" parent="."]
