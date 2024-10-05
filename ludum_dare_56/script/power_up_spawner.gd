@@ -2,7 +2,8 @@ extends Timer
 
 var available_powerups = [
 	preload("res://scene/speed_powerup.tscn"),
-	preload("res://scene/light_powerup.tscn")
+	preload("res://scene/light_powerup.tscn"),
+	preload("res://scene/add_powerup.tscn"),
 ]
 
 # Called when the node enters the scene tree for the first time.
