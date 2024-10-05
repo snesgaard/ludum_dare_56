@@ -7,6 +7,9 @@ extends RigidBody3D
 
 var rng = RandomNumberGenerator.new()
 
+func _on_force_change(c: float) -> void:
+	force += c
+
 func _find_nearest_creature() -> Node:
 	var creatures = get_tree().get_nodes_in_group("creature")
 	var closest = null
@@ -32,6 +35,7 @@ func _move_forward() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	move_timer.timeout.connect(_move_forward)
+	Powerup.bad_guy_force_change.connect(_on_force_change)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
