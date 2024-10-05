@@ -9,6 +9,7 @@ extends RigidBody3D
 var rng = RandomNumberGenerator.new()
 
 func _on_force_change(c: float) -> void:
+	print("Force was changed", c)
 	force += c
 
 func _find_nearest_creature() -> Node:
