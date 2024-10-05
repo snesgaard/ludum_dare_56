@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Score="*res://script/score.gd"
 Powerup="*res://script/powerup_singleton.gd"
+SpawnLogicSingleton="*res://script/SpawnLogicSingleton.gd"
 
 [global_group]
 
@@ -26,3 +27,5 @@ creature="creatures"
 badguy="badguy"
 goal="goal"
 world="World collision objects"
+entities="Spawned entities"
+powerup=""

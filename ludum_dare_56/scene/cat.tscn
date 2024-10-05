@@ -8,7 +8,7 @@ size = Vector3(1.94104, 4.62451, 8.52441)
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_4yqdw"]
 
-[node name="body" type="RigidBody3D" groups=["badguy"]]
+[node name="body" type="RigidBody3D" groups=["badguy", "entities"]]
 script = ExtResource("1_rqp3q")
 force_step = 500.0
 

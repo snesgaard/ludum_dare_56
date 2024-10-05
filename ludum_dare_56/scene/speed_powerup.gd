@@ -1,6 +1,9 @@
 extends RigidBody3D
 
-@export var force_change: int = 1000
+@export var force_change: int = 100
+
+func initialize(spawn_position: Vector3):
+	self.position = spawn_position
 
 func _body_entered(other: Node) -> void:
 	var is_bad_guy = other.is_in_group("badguy")

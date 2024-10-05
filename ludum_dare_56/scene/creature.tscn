@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6diom"]
 
-[node name="body" type="RigidBody3D" groups=["creature"]]
+[node name="body" type="RigidBody3D" groups=["creature", "entities"]]
 script = ExtResource("1_jtdn1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
