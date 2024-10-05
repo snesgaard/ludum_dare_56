@@ -36,7 +36,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.07472, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.37195, 0)
-light_color = Color(1, 0.207843, 0.168627, 1)
 spot_range = 13.204
 spot_attenuation = -0.18
 spot_angle = 76.63
@@ -55,7 +54,6 @@ shape = SubResource("ConcavePolygonShape3D_k7fx8")
 
 [node name="floor6" type="StaticBody3D" parent="level-geometry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.007, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="level-geometry/floor6"]
 mesh = SubResource("BoxMesh_3ibol")
@@ -109,7 +107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00041, 6.23163, 0)
 [node name="Control" parent="." instance=ExtResource("4_xv03d")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.558802, 0.829301, 0, -0.829301, 0.558802, 0, 13.3782, 7.0309)
+transform = Transform3D(-0.0511159, -0.828217, 0.558072, -2.11758e-22, 0.558802, 0.829301, -0.998693, 0.0423905, -0.0285637, 3.35278, 14.4369, 1.71793)
 
 [node name="cat" parent="." instance=ExtResource("3_am6ro")]
 transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -0.529384, 1.72837, 3.34623)

@@ -27,7 +27,7 @@ func _move_forward() -> void:
 	var n = (target.position - self.position).normalized()
 	apply_central_force(n * force)
 	force += force_step
-	apply_torque_impulse(-n * force / 10)
+	#apply_torque_impulse(-n * force / 10)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
