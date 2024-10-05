@@ -1,30 +1,38 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdoit5xerdqub"]
 
 [ext_resource type="Script" path="res://script/cat.gd" id="1_rqp3q"]
-[ext_resource type="PackedScene" uid="uid://bxl0bsq6uyip8" path="res://blend/cat.blend" id="2_b313r"]
+[ext_resource type="PackedScene" uid="uid://cdhqpvvd2vstn" path="res://blend/cat.blend" id="2_b313r"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_x3mqa"]
-size = Vector3(6, 3, 0.75)
+[sub_resource type="BoxShape3D" id="BoxShape3D_58q5l"]
+size = Vector3(1.94104, 4.62451, 8.52441)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mdk5p"]
-points = PackedVector3Array(3, 1.5, 0.375, 3, 1.5, -0.375, -3, 1.5, 0.375, 3, -1.5, 0.375, 3, -1.5, -0.375, -3, 1.5, -0.375, -3, -1.5, 0.375, -3, -1.5, -0.375)
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_4yqdw"]
 
 [node name="body" type="RigidBody3D" groups=["badguy"]]
-gravity_scale = 2.0
 script = ExtResource("1_rqp3q")
 force_step = 500.0
 
-[node name="cat" parent="." instance=ExtResource("2_b313r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19955, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-mesh = SubResource("BoxMesh_x3mqa")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.00780153, 0, 3.32284, 0, 1, 0, -0.99997, 0, 0.025924, 0, 0.747307, -2.98119)
-shape = SubResource("ConvexPolygonShape3D_mdk5p")
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_58q5l")
+
+[node name="cat" parent="." instance=ExtResource("2_b313r")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.719575)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="CameraRootOffset" type="Node3D" parent="."]
+
+[node name="HorizontalPivot" type="Node3D" parent="CameraRootOffset"]
+
+[node name="VerticalPivot" type="Node3D" parent="CameraRootOffset/HorizontalPivot"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRootOffset/HorizontalPivot/VerticalPivot"]
+shape = SubResource("SeparationRayShape3D_4yqdw")
+
+[node name="CameraLeafOffset" type="Node3D" parent="CameraRootOffset/HorizontalPivot/VerticalPivot/SpringArm3D"]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRootOffset/HorizontalPivot/VerticalPivot/SpringArm3D/CameraLeafOffset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09363, 2.37641)
