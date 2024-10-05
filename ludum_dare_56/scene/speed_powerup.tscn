@@ -8,7 +8,6 @@ size = Vector3(2, 2, 2)
 
 [node name="body" type="RigidBody3D"]
 script = ExtResource("1_aowqb")
-force_change = 5000
 
 [node name="speed_powerup" parent="." instance=ExtResource("1_0opxr")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
