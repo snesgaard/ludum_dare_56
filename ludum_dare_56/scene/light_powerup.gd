@@ -1,6 +1,7 @@
 extends RigidBody3D
 
-@export var light_change: int = 1
+@export var posititve_light_change: float = 2.0
+@export var negative_light_change: float = 0.5
 
 func initialize(spawn_position: Vector3):
 	self.position = spawn_position
@@ -9,10 +10,10 @@ func _body_entered(other: Node) -> void:
 	var is_bad_guy = other.is_in_group("badguy")
 	var is_creature = other.is_in_group("creature")
 	if is_bad_guy:
-		Powerup.change_light.emit(light_change)
+		Powerup.change_light.emit(negative_light_change)
 	
 	if is_creature:
-		Powerup.change_light.emit(-light_change)
+		Powerup.change_light.emit(posititve_light_change)
 	
 	if is_bad_guy or is_creature:
 		self.queue_free()

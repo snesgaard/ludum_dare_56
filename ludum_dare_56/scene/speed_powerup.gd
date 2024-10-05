@@ -1,6 +1,7 @@
 extends RigidBody3D
 
-@export var force_change: int = 100
+@export var negative_force_change: int = 50
+@export var positive_force_change: int = 100
 
 func initialize(spawn_position: Vector3):
 	self.position = spawn_position
@@ -9,10 +10,10 @@ func _body_entered(other: Node) -> void:
 	var is_bad_guy = other.is_in_group("badguy")
 	var is_creature = other.is_in_group("creature")
 	if is_bad_guy:
-		Powerup.bad_guy_force_change.emit(force_change)
+		Powerup.bad_guy_force_change.emit(positive_force_change)
 	
 	if is_creature:
-		Powerup.bad_guy_force_change.emit(-force_change)
+		Powerup.bad_guy_force_change.emit(negative_force_change)
 	
 	if is_bad_guy or is_creature:
 		self.queue_free()
