@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://script/spot_light_3d.gd" id="2_b50a5"]
 [ext_resource type="PackedScene" uid="uid://bdoit5xerdqub" path="res://scene/cat.tscn" id="3_am6ro"]
 [ext_resource type="PackedScene" uid="uid://dvurw6w1mgvdy" path="res://scene/score_label.tscn" id="4_xv03d"]
-[ext_resource type="PackedScene" uid="uid://c35cp7gnyqio" path="res://scene/speed_powerup.tscn" id="5_n5fc2"]
+[ext_resource type="PackedScene" uid="uid://c1yhtwqyclqta" path="res://scene/speed_powerup.tscn" id="5_n5fc2"]
 [ext_resource type="Script" path="res://script/power_up_spawner.gd" id="7_7j6wm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qfhjc"]

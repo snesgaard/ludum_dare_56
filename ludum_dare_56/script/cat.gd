@@ -12,8 +12,7 @@ func initialize(spawn_position: Vector3):
 	self.position = spawn_position
 	
 func _on_force_change(c: float) -> void:
-	print("Force was changed", c)
-	force += c
+	force = clamp(max_force, 100, force + c)
 
 func _find_nearest_creature() -> Node:
 	var creatures = get_tree().get_nodes_in_group("creature")

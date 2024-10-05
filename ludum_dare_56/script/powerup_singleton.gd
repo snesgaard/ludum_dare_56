@@ -7,6 +7,7 @@ var powerup_player = AudioStreamPlayer.new()
 var powerdown_player = AudioStreamPlayer.new()
 
 signal bad_guy_force_change(change: float)
+signal change_light(change: float)
 
 func _on_bad_guy_force_change(change: float) -> void:
 	if change > 0:
@@ -22,6 +23,7 @@ func _ready() -> void:
 	add_child(powerdown_player)
 	
 	bad_guy_force_change.connect(_on_bad_guy_force_change)
+	change_light.connect(_on_bad_guy_force_change)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
