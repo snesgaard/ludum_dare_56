@@ -3,7 +3,7 @@ extends RigidBody3D
 @onready var move_timer = $Timer
 
 @export var force: float = 500
-@export var force_step: float = 100
+@export var force_step: float = 50
 @export var min_force: float = 500
 @export var max_force: float = 3000
 
