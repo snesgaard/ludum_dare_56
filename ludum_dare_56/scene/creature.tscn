@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbggxmrguq6oh"]
+
+[ext_resource type="Script" path="res://script/body.gd" id="1_jtdn1"]
+[ext_resource type="AudioStream" uid="uid://b2nhpr0a8cu2w" path="res://sound/step.wav" id="2_71tmf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6diom"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yjpuk"]
+
+[node name="body" type="RigidBody3D" groups=["creature"]]
+script = ExtResource("1_jtdn1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6diom")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_yjpuk")
+
+[node name="step_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_71tmf")

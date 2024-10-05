@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdoit5xerdqub"]
+
+[ext_resource type="Script" path="res://script/cat.gd" id="1_rqp3q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x3mqa"]
+size = Vector3(6, 3, 0.75)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mdk5p"]
+points = PackedVector3Array(3, 1.5, 0.375, 3, 1.5, -0.375, -3, 1.5, 0.375, 3, -1.5, 0.375, 3, -1.5, -0.375, -3, 1.5, -0.375, -3, -1.5, 0.375, -3, -1.5, -0.375)
+
+[node name="body" type="RigidBody3D" groups=["badguy"]]
+lock_rotation = true
+script = ExtResource("1_rqp3q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_x3mqa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_mdk5p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvurw6w1mgvdy"]
+
+[ext_resource type="Script" path="res://scene/score_label.gd" id="1_we1ei"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4sho2"]
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_we1ei")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 21.0
+offset_right = 122.0
+offset_bottom = 44.0
+text = "YO MOM!!!!!"
+
+[node name="Timer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 25.0
+offset_right = 1072.0
+offset_bottom = 48.0
+text = "Time:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 15.0
+offset_right = 716.0
+offset_bottom = 60.0
+text = "SURVIVE!!!"
+label_settings = SubResource("LabelSettings_4sho2")
+vertical_alignment = 1
