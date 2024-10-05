@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://mmxd01r232ti"]
+[gd_scene load_steps=17 format=3 uid="uid://mmxd01r232ti"]
 
 [ext_resource type="PackedScene" uid="uid://cbggxmrguq6oh" path="res://scene/creature.tscn" id="1_h6m4x"]
 [ext_resource type="Script" path="res://main.gd" id="1_wi1wa"]
@@ -128,9 +128,6 @@ transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 
 visible = false
 current = true
 size = 17.216
-
-[node name="powerup" parent="." instance=ExtResource("5_n5fc2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.39326, 2.73536, 4.27203)
 
 [node name="PowerUpSpawner" type="Timer" parent="."]
 autostart = true

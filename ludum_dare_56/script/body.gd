@@ -16,10 +16,10 @@ func _ready() -> void:
 	body_entered.connect(_body_entered, 0)
 
 var input_dir = {
-	"ui_up": Vector3.FORWARD,
-	"ui_down": Vector3.BACK,
-	"ui_left": Vector3.LEFT,
-	"ui_right": Vector3.RIGHT
+	"move_forward": Vector3.FORWARD,
+	"move_backward": Vector3.BACK,
+	"move_left": Vector3.LEFT,
+	"move_right": Vector3.RIGHT
 }
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
