@@ -4,15 +4,14 @@ extends RigidBody3D
 
 @export var force: float = 500
 @export var force_step: float = 100
-@export var max_force: float = 5000
-
-var rng = RandomNumberGenerator.new()
+@export var min_force: float = 500
+@export var max_force: float = 3000
 
 func initialize(spawn_position: Vector3):
 	self.position = spawn_position
 	
 func _on_force_change(c: float) -> void:
-	force = clamp(max_force, 100, force + c)
+	force = clamp(force + c, min_force, max_force)
 
 func _find_nearest_creature() -> Node:
 	var creatures = get_tree().get_nodes_in_group("creature")

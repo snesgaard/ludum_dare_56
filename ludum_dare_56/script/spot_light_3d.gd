@@ -11,8 +11,6 @@ func _on_change_light(change: float) -> void:
 func _ready() -> void:
 	Powerup.change_light.connect(_on_change_light)
 
-var rng = RandomNumberGenerator.new()
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

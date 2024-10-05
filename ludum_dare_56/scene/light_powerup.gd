@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-@export var light_change: int = 10
+@export var light_change: int = 1
 
 func initialize(spawn_position: Vector3):
 	self.position = spawn_position
