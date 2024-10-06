@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://mmxd01r232ti"]
+[gd_scene load_steps=32 format=3 uid="uid://mmxd01r232ti"]
 
 [ext_resource type="PackedScene" uid="uid://cbggxmrguq6oh" path="res://scene/creature.tscn" id="1_h6m4x"]
 [ext_resource type="Script" path="res://main.gd" id="1_wi1wa"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://script/power_up_spawner.gd" id="7_7j6wm"]
 [ext_resource type="Texture2D" uid="uid://cdwwpy58y4cmf" path="res://resources/wall_texture_n.png" id="8_konh7"]
 [ext_resource type="PackedScene" uid="uid://c0jl7gj8axb6s" path="res://blend/shelf.blend" id="11_n56bc"]
+[ext_resource type="PackedScene" uid="uid://bdyoakskyhbdi" path="res://scene/pot.tscn" id="12_q31wd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qfhjc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -200,5 +201,7 @@ script = ExtResource("7_7j6wm")
 
 [node name="shelf2" parent="." instance=ExtResource("11_n56bc")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -8.55416, 2.97513, 1.54888)
+
+[node name="pot" parent="." instance=ExtResource("12_q31wd")]
 
 [connection signal="timeout" from="PowerUpSpawner" to="PowerUpSpawner" method="_on_timeout"]
