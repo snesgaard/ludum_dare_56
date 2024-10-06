@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://script/spot_light_3d.gd" id="2_b50a5"]
 [ext_resource type="PackedScene" uid="uid://bdoit5xerdqub" path="res://scene/cat.tscn" id="3_am6ro"]
 [ext_resource type="PackedScene" uid="uid://dvurw6w1mgvdy" path="res://scene/score_label.tscn" id="4_xv03d"]
-[ext_resource type="Texture2D" uid="uid://bip1xiehosv3q" path="res://resources/wall_texture.png" id="5_4q8dp"]
-[ext_resource type="Texture2D" uid="uid://d2uluib38cxqm" path="res://resources/floor_texture.png" id="5_m67jj"]
+[ext_resource type="Texture2D" uid="uid://b0g251hk7kwyv" path="res://resources/wall_texture.png" id="5_4q8dp"]
+[ext_resource type="Texture2D" uid="uid://cxkadge33fgmj" path="res://resources/floor_texture.png" id="5_m67jj"]
 [ext_resource type="Script" path="res://script/power_up_spawner.gd" id="7_7j6wm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qfhjc"]
