@@ -1,13 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://mmxd01r232ti"]
+[gd_scene load_steps=30 format=3 uid="uid://mmxd01r232ti"]
 
 [ext_resource type="PackedScene" uid="uid://cbggxmrguq6oh" path="res://scene/creature.tscn" id="1_h6m4x"]
 [ext_resource type="Script" path="res://main.gd" id="1_wi1wa"]
 [ext_resource type="Script" path="res://script/spot_light_3d.gd" id="2_b50a5"]
 [ext_resource type="PackedScene" uid="uid://bdoit5xerdqub" path="res://scene/cat.tscn" id="3_am6ro"]
 [ext_resource type="PackedScene" uid="uid://dvurw6w1mgvdy" path="res://scene/score_label.tscn" id="4_xv03d"]
-[ext_resource type="Texture2D" uid="uid://b0g251hk7kwyv" path="res://resources/wall_texture.png" id="5_4q8dp"]
-[ext_resource type="Texture2D" uid="uid://cxkadge33fgmj" path="res://resources/floor_texture.png" id="5_m67jj"]
+[ext_resource type="Texture2D" uid="uid://bip1xiehosv3q" path="res://resources/wall_texture.png" id="5_4q8dp"]
+[ext_resource type="Texture2D" uid="uid://d2uluib38cxqm" path="res://resources/floor_texture.png" id="5_m67jj"]
+[ext_resource type="Texture2D" uid="uid://bhpojgpseokss" path="res://resources/floor_texture_n.png" id="6_ewxs4"]
 [ext_resource type="Script" path="res://script/power_up_spawner.gd" id="7_7j6wm"]
+[ext_resource type="Texture2D" uid="uid://qug62wsgpb5j" path="res://resources/wall_texture_n.png" id="8_konh7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qfhjc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -29,6 +31,9 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_as18y"]
 albedo_texture = ExtResource("5_m67jj")
 roughness_texture = ExtResource("5_m67jj")
+normal_enabled = true
+normal_scale = 0.3
+normal_texture = ExtResource("6_ewxs4")
 heightmap_enabled = true
 heightmap_texture = ExtResource("5_m67jj")
 uv1_scale = Vector3(30, 30, 30)
@@ -50,6 +55,8 @@ points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbetf"]
 albedo_texture = ExtResource("5_4q8dp")
 roughness_texture = ExtResource("5_m67jj")
+normal_enabled = true
+normal_texture = ExtResource("8_konh7")
 heightmap_enabled = true
 heightmap_texture = ExtResource("5_4q8dp")
 uv1_scale = Vector3(30, 30, 30)
@@ -64,6 +71,8 @@ points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojxpy"]
 albedo_texture = ExtResource("5_4q8dp")
 roughness_texture = ExtResource("5_4q8dp")
+normal_enabled = true
+normal_texture = ExtResource("8_konh7")
 heightmap_enabled = true
 heightmap_texture = ExtResource("5_4q8dp")
 uv1_scale = Vector3(30, 30, 30)
@@ -78,6 +87,8 @@ points = PackedVector3Array(10.1587, 0.611111, 10.1548, -10.1587, -0.65873, -10.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p38yn"]
 albedo_texture = ExtResource("5_4q8dp")
 roughness_texture = ExtResource("5_4q8dp")
+normal_enabled = true
+normal_texture = ExtResource("8_konh7")
 heightmap_enabled = true
 heightmap_texture = ExtResource("5_4q8dp")
 uv1_scale = Vector3(30, 30, 30)
@@ -138,6 +149,7 @@ shape = SubResource("ConvexPolygonShape3D_lysvs")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 10, 10, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="level-geometry/right-wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("BoxMesh_ost85")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/right-wall" groups=["world"]]
@@ -147,6 +159,7 @@ shape = SubResource("ConvexPolygonShape3D_1kk2l")
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 10, -10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="level-geometry/back-wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("BoxMesh_0ev4g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/back-wall" groups=["world"]]
@@ -156,6 +169,7 @@ shape = SubResource("ConvexPolygonShape3D_14ji5")
 transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -10, 10, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="level-geometry/left-wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("BoxMesh_xufjh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-geometry/left-wall" groups=["world"]]
