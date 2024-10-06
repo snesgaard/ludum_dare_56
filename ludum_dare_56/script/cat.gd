@@ -1,6 +1,8 @@
 extends RigidBody3D
 
 @onready var move_timer = $Timer
+@onready var meow_sound = $meow_sound
+
 
 @export var force: float = 500
 @export var force_step: float = 50
@@ -34,6 +36,7 @@ func _move_forward() -> void:
 	apply_central_force(n * force)
 	if force < max_force:
 		force += force_step
+	meow_sound.play()
 	#apply_torque_impulse(-n * force / 10)
 	
 # Called when the node enters the scene tree for the first time.
