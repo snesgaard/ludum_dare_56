@@ -27,10 +27,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	time += delta
-	_update_time_label(time)
+	if not _is_game_done():
+		time += delta
+		_update_time_label(time)
 	
 	if _is_game_done() and not game_end_label.visible:
 		game_end_label.text = "You survived: %f" % (time)
 		game_end_label.visible = true
+		
 	

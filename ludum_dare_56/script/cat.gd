@@ -22,8 +22,12 @@ func initialize(spawn_position: Vector3):
 func _on_force_change(c: float) -> void:
 	force = clamp(force + c, min_force, max_force)
 
+	
+var rng = RandomNumberGenerator.new()
+
 func _find_nearest_creature() -> Node:
-	var creatures = get_tree().get_nodes_in_group("creature")
+	var group = "creature" if rng.randf_range(0.0, 1.0) > 0.2 else "powerup"
+	var creatures = get_tree().get_nodes_in_group(group)
 	var closest = null
 	var dist = INF
 	for c in creatures:
@@ -50,8 +54,7 @@ func _move_forward() -> void:
 		force += force_step
 	play_meow()
 	#apply_torque_impulse(-n * force / 10)
-	
-var rng = RandomNumberGenerator.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	meow_audio_index = rng.randi_range(0, meow_audio.size() - 1)
