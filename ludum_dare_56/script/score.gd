@@ -28,7 +28,7 @@ func _ready() -> void:
 	print("We have a score of:", score)
 
 func restart_game() -> void:
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().reload_current_scene()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
