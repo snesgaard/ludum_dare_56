@@ -7,6 +7,7 @@ extends RigidBody3D
 @export var force_step: float = 50
 @export var min_force: float = 500
 @export var max_force: float = 3000
+@export var can_target_powerup: bool = true
 
 @onready var meow_audio = [
 	$meow_damp,
@@ -26,7 +27,7 @@ func _on_force_change(c: float) -> void:
 var rng = RandomNumberGenerator.new()
 
 func _find_nearest_creature() -> Node:
-	var group = "creature" if rng.randf_range(0.0, 1.0) > 0.2 else "powerup"
+	var group = "creature" if rng.randf_range(0.0, 1.0) > 0.2 or not can_target_powerup else "powerup"
 	var creatures = get_tree().get_nodes_in_group(group)
 	var closest = null
 	var dist = INF

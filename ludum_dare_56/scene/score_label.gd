@@ -33,6 +33,6 @@ func _process(delta: float) -> void:
 	
 	if _is_game_done() and not game_end_label.visible:
 		game_end_label.text = "You survived: %f" % (time)
-		game_end_label.visible = true
+		game_end_label.visible = true 
 		
 	
