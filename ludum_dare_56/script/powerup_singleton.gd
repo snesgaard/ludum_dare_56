@@ -24,15 +24,18 @@ func _spawn_more_entity(pos: Vector3, spawn_enemy: bool) -> void:
 		powerdown_player.play()
 		var cat = cat_scene.instantiate()
 		cat.position = pos
-		get_tree().root.add_child(cat)
+		var r = get_tree().root.find_child("PowerUpSpawner", true, false)
+		r.add_child(cat)
 	else:
 		var rat = rat_scene.instantiate()
 		rat.position = pos
-		get_tree().root.add_child(rat)
+		var r = get_tree().root.find_child("PowerUpSpawner", true, false)
+		r.add_child(rat)
 		powerup_player.play()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(get_tree().root.find_child("PowerUpSpawner", true, false))
 	powerup_player.stream = powerup_sound
 	powerdown_player.stream = powerdown_sound
 	add_child(powerup_player)
