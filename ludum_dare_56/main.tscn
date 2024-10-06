@@ -1,15 +1,16 @@
-[gd_scene load_steps=30 format=3 uid="uid://mmxd01r232ti"]
+[gd_scene load_steps=31 format=3 uid="uid://mmxd01r232ti"]
 
 [ext_resource type="PackedScene" uid="uid://cbggxmrguq6oh" path="res://scene/creature.tscn" id="1_h6m4x"]
 [ext_resource type="Script" path="res://main.gd" id="1_wi1wa"]
 [ext_resource type="Script" path="res://script/spot_light_3d.gd" id="2_b50a5"]
 [ext_resource type="PackedScene" uid="uid://bdoit5xerdqub" path="res://scene/cat.tscn" id="3_am6ro"]
 [ext_resource type="PackedScene" uid="uid://dvurw6w1mgvdy" path="res://scene/score_label.tscn" id="4_xv03d"]
-[ext_resource type="Texture2D" uid="uid://bip1xiehosv3q" path="res://resources/wall_texture.png" id="5_4q8dp"]
-[ext_resource type="Texture2D" uid="uid://d2uluib38cxqm" path="res://resources/floor_texture.png" id="5_m67jj"]
-[ext_resource type="Texture2D" uid="uid://bhpojgpseokss" path="res://resources/floor_texture_n.png" id="6_ewxs4"]
+[ext_resource type="Texture2D" uid="uid://b0g251hk7kwyv" path="res://resources/wall_texture.png" id="5_4q8dp"]
+[ext_resource type="Texture2D" uid="uid://cxkadge33fgmj" path="res://resources/floor_texture.png" id="5_m67jj"]
+[ext_resource type="Texture2D" uid="uid://drtynwwegco4w" path="res://resources/floor_texture_n.png" id="6_ewxs4"]
 [ext_resource type="Script" path="res://script/power_up_spawner.gd" id="7_7j6wm"]
-[ext_resource type="Texture2D" uid="uid://qug62wsgpb5j" path="res://resources/wall_texture_n.png" id="8_konh7"]
+[ext_resource type="Texture2D" uid="uid://cdwwpy58y4cmf" path="res://resources/wall_texture_n.png" id="8_konh7"]
+[ext_resource type="PackedScene" uid="uid://c0jl7gj8axb6s" path="res://blend/shelf.blend" id="11_n56bc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qfhjc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -196,5 +197,8 @@ size = 17.216
 [node name="PowerUpSpawner" type="Timer" parent="."]
 autostart = true
 script = ExtResource("7_7j6wm")
+
+[node name="shelf2" parent="." instance=ExtResource("11_n56bc")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -8.55416, 2.97513, 1.54888)
 
 [connection signal="timeout" from="PowerUpSpawner" to="PowerUpSpawner" method="_on_timeout"]
