@@ -14,10 +14,16 @@ signal change_light(change: float)
 signal spawn_more_entity(pos: Vector3, spawn_enemy: bool)
 
 func _on_bad_guy_force_change(change: float) -> void:
-	if change > 0:
+	if change > 75:
 		powerdown_player.play()
 	else:
 		powerup_player.play()
+
+func _on_light_change(change: float) -> void:
+	if change > 1:
+		powerup_player.play()
+	else:
+		powerdown_player.play()
 	
 func _spawn_more_entity(pos: Vector3, spawn_enemy: bool) -> void:
 	if spawn_enemy:
@@ -42,7 +48,7 @@ func _ready() -> void:
 	add_child(powerdown_player)
 	
 	bad_guy_force_change.connect(_on_bad_guy_force_change)
-	change_light.connect(_on_bad_guy_force_change)
+	change_light.connect(_on_light_change)
 	spawn_more_entity.connect(_spawn_more_entity)
 	
 
