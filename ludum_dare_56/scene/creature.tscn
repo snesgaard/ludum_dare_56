@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script/body.gd" id="1_jtdn1"]
 [ext_resource type="AudioStream" uid="uid://b2nhpr0a8cu2w" path="res://sound/step.wav" id="2_71tmf"]
-[ext_resource type="PackedScene" uid="uid://bbxdog1u31lex" path="res://blend/mouse.blend" id="3_flyfv"]
+[ext_resource type="PackedScene" uid="uid://x3x5ifcn328e" path="res://blend/mouse.blend" id="3_flyfv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6diom"]
 

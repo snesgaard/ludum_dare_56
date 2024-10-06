@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bdoit5xerdqub"]
 
 [ext_resource type="Script" path="res://script/cat.gd" id="1_rqp3q"]
-[ext_resource type="PackedScene" uid="uid://yy867jy67ut0" path="res://blend/cat.blend" id="2_b313r"]
-[ext_resource type="AudioStream" uid="uid://nyr81oxpmixa" path="res://sound/meow_aggressive.wav" id="3_8csgh"]
-[ext_resource type="AudioStream" uid="uid://dosfrtmrymdyd" path="res://sound/dampened_meow.wav" id="3_bvfu2"]
-[ext_resource type="AudioStream" uid="uid://blombl1nxwoqk" path="res://sound/meoooooooooow.wav" id="5_bwakt"]
+[ext_resource type="PackedScene" uid="uid://cdhqpvvd2vstn" path="res://blend/cat.blend" id="2_b313r"]
+[ext_resource type="AudioStream" uid="uid://crn8osclx6lvu" path="res://sound/meow_aggressive.wav" id="3_8csgh"]
+[ext_resource type="AudioStream" uid="uid://nui45fxvndg6" path="res://sound/dampened_meow.wav" id="3_bvfu2"]
+[ext_resource type="AudioStream" uid="uid://cirja2471nn5a" path="res://sound/meoooooooooow.wav" id="5_bwakt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58q5l"]
 size = Vector3(1.94104, 4.62451, 8.52441)

@@ -1,0 +1,124 @@
+[gd_scene load_steps=13 format=3 uid="uid://tbqfx5sbuyn5"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_hfuc5"]
+[ext_resource type="PackedScene" uid="uid://cdhqpvvd2vstn" path="res://blend/cat.blend" id="1_unyxk"]
+[ext_resource type="PackedScene" uid="uid://x3x5ifcn328e" path="res://blend/mouse.blend" id="2_1v81s"]
+[ext_resource type="AudioStream" uid="uid://uo0sexthhqcv" path="res://sound/raining_cats_small_loop.wav" id="4_cnaah"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cyaq"]
+
+[sub_resource type="Theme" id="Theme_0qg31"]
+Label/styles/normal = SubResource("StyleBoxEmpty_4cyaq")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gwrfg"]
+font_size = 70
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v4q8g"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_oxffx"]
+sky_material = SubResource("ProceduralSkyMaterial_v4q8g")
+
+[sub_resource type="Environment" id="Environment_vh2t1"]
+sky = SubResource("Sky_oxffx")
+ambient_light_source = 1
+tonemap_mode = 2
+ssao_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.28275, 0.309135, 0.35061, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dl2ng"]
+albedo_color = Color(0.212305, 0.212305, 0.212305, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7gp37"]
+material = SubResource("StandardMaterial3D_dl2ng")
+size = Vector3(50, 1, 50)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hfuc5")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 307.0
+offset_right = 347.0
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Start
+"
+icon_alignment = 1
+
+[node name="SubViewport" type="SubViewport" parent="CenterContainer/GridContainer"]
+size_2d_override_stretch = true
+render_target_update_mode = 1
+
+[node name="quits" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Quits"
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 456.0
+offset_top = 207.0
+offset_right = 695.0
+offset_bottom = 207.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+theme = SubResource("Theme_0qg31")
+text = "Meow
+Hunter"
+label_settings = SubResource("LabelSettings_gwrfg")
+
+[node name="Main_menu_3d" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Main_menu_3d"]
+environment = SubResource("Environment_vh2t1")
+
+[node name="Camera3D" type="Camera3D" parent="Main_menu_3d"]
+transform = Transform3D(0.88988, 0.274744, 0.364184, -0.196088, 0.951159, -0.238424, -0.411902, 0.140757, 0.900291, 3.92924, 0.335367, -1.13563)
+
+[node name="cat" parent="Main_menu_3d" instance=ExtResource("1_unyxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.54671)
+
+[node name="mouse" parent="Main_menu_3d" instance=ExtResource("2_1v81s")]
+transform = Transform3D(0.463192, -0.622774, 0.63056, 0.0773629, 0.737182, 0.671251, -0.882875, -0.262136, 0.389636, -1.51599, 4.76837e-07, -8.77864)
+
+[node name="mouse2" parent="Main_menu_3d" instance=ExtResource("2_1v81s")]
+transform = Transform3D(0.768976, 0, -0.639278, 0, 1, 0, 0.639278, 0, 0.768976, 4.02143, 0, -4.38027)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Main_menu_3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.517527, 0)
+mesh = SubResource("BoxMesh_7gp37")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Main_menu_3d"]
+transform = Transform3D(1, 0, 0, 0, 0.669468, 0.742841, 0, -0.742841, 0.669468, 0, 5.84016, 0)
+light_energy = 3.424
+shadow_enabled = true
+spot_range = 8.042
+spot_angle_attenuation = 1.46409
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Main_menu_3d"]
+transform = Transform3D(0.485176, -0.226316, -0.844622, 0, -0.965926, 0.258819, -0.874417, -0.125573, -0.468644, 0, 5, -13)
+light_energy = 0.05
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cnaah")
+autoplay = true
+
+[connection signal="pressed" from="CenterContainer/GridContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/quits" to="." method="_on_quits_pressed"]

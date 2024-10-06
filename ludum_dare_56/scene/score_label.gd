@@ -10,7 +10,7 @@ func _update_score_label(score: int) -> void:
 	label.text = "Score: %d" % (score)
 
 func _update_time_label(t: float) -> void:
-	timer_label.text = "Time: %f" % (t)
+	timer_label.text = "Time: %.3fs" % (t)
 	
 func _is_game_done() -> bool:
 	for c in get_tree().get_nodes_in_group("creature"):
@@ -34,5 +34,7 @@ func _process(delta: float) -> void:
 	if _is_game_done() and not game_end_label.visible:
 		game_end_label.text = "You survived: %f" % (time)
 		game_end_label.visible = true 
+		Score.on_endgame_update_timer(time)
+		Score.endgame()
 		
 	

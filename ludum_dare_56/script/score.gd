@@ -1,11 +1,15 @@
 extends Node
 
 var score: int = 0
+var timer: float = 0.0
 var hit_sound = preload("res://sound/hit.wav")
 var hit_player = AudioStreamPlayer.new()
 var main_scene = preload("res://main.tscn")
 
 signal on_score_updated(new_score: int)
+
+func on_endgame_update_timer(new_timer: float):
+	timer = new_timer
 
 func _set_score(s: int) -> void:
 	score = s
@@ -28,7 +32,13 @@ func _ready() -> void:
 	print("We have a score of:", score)
 
 func restart_game() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://main.tscn")
+	score = 0
+	timer = 0.0
+
+func endgame():
+	get_tree().change_scene_to_file("res://end_game_menu.tscn")
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
