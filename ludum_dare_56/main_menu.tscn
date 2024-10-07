@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://tbqfx5sbuyn5"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_hfuc5"]
-[ext_resource type="PackedScene" uid="uid://cdhqpvvd2vstn" path="res://blend/cat.blend" id="1_unyxk"]
-[ext_resource type="PackedScene" uid="uid://x3x5ifcn328e" path="res://blend/mouse.blend" id="2_1v81s"]
-[ext_resource type="AudioStream" uid="uid://uo0sexthhqcv" path="res://sound/raining_cats_small_loop.wav" id="4_cnaah"]
+[ext_resource type="PackedScene" uid="uid://c5jclqtb8xxoh" path="res://blend/cat.blend" id="1_unyxk"]
+[ext_resource type="PackedScene" uid="uid://bh13kwoilotaj" path="res://blend/mouse.blend" id="2_1v81s"]
+[ext_resource type="AudioStream" uid="uid://cqf43sefbhrl0" path="res://sound/raining_cats_small_loop.wav" id="4_cnaah"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4cyaq"]
 
